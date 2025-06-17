@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lex&Struct – Vidéos</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #0ff;
+    }
+    iframe {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+    }
+    a {
+      color: #0ff;
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 Nos Vidéos</h1>
+
+  <p>Découvrez nos vidéos pédagogiques en droit et génie civil.</p>
+
+  <!-- Exemple de vidéo -->
+  <h2>La Constitution sénégalaise expliquée</h2>
+  <iframe src="https://youtu.be/e0pnveCIs04?si=Y3ptBTgAFAm9RquE" allowfullscreen></iframe>
+
+  <a href="index.html">← Retour à l’accueil</a>
+</body>
+</html>
