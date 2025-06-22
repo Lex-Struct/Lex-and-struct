@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lex&Struct - Expertise Droit & Génie Civil</title>
+    <title>Lex&Struct - Formation en Droit et Génie Civil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
         :root {
             --primary: #1a237e;
             --secondary: #ff6d00;
@@ -26,9 +26,9 @@
         }
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--primary);
         }
-        /* HEADER */
+
+        /* Header */
         header {
             background-color: var(--primary);
             padding: 1rem 2rem;
@@ -55,7 +55,19 @@
             color: rgba(255,255,255,0.9);
             font-size: 0.9rem;
         }
-        /* SECTIONS */
+
+        /* Bannière */
+        .hero {
+            background: linear-gradient(rgba(26,35,126,0.8), rgba(26,35,126,0.8)), 
+                        url('https://i.imgur.com/8QZQZQZ.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        /* Sections */
         section {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -64,8 +76,10 @@
         section h2 {
             text-align: center;
             margin-bottom: 3rem;
-            font-size: 2rem;
+            color: var(--primary);
         }
+
+        /* Grille ressources */
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -81,21 +95,13 @@
         .resource-card:hover {
             transform: translateY(-5px);
         }
-        .resource-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .resource-content {
-            padding: 1.5rem;
-        }
-        /* VIDÉOS */
+
+        /* Vidéos YouTube */
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            background: #000;
         }
         .video-container iframe {
             position: absolute;
@@ -105,7 +111,8 @@
             height: 100%;
             border: none;
         }
-        /* BOUTONS */
+
+        /* Boutons */
         .cta-button {
             display: inline-block;
             background-color: var(--secondary);
@@ -115,45 +122,26 @@
             text-decoration: none;
             font-weight: 600;
             margin-top: 1rem;
-            transition: transform 0.3s;
         }
-        .cta-button:hover {
-            transform: translateY(-3px);
-        }
-        .resource-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-        /* INFOS FICHIERS */
+
+        /* Infos fichiers */
         .file-info {
             color: #666;
             font-size: 0.85rem;
-            margin: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 5px;
+            margin: 0.5rem 0;
         }
-        /* FOOTER */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        /* MOBILE */
+
+        /* Responsive */
         @media (max-width: 768px) {
             .logo img { height: 60px; }
             section { padding: 3rem 1rem; }
-            section h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
     <header>
         <div class="logo">
             <img src="images/logo-lexstruct.png" alt="Lex&Struct">
@@ -165,7 +153,7 @@
     </header>
 
     <main>
-        <!-- VIDÉOS YOUTUBE -->
+        <!-- Section Vidéos -->
         <section id="videos">
             <h2><i class="fab fa-youtube"></i> Nos Vidéos</h2>
             <div class="resources-grid">
@@ -174,54 +162,54 @@
                         <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_1" allowfullscreen></iframe>
                     </div>
                     <div class="resource-content">
-                        <h3>Droit des contrats BTP</h3>
-                        <p>Les clauses essentielles à connaître</p>
+                        <h3>Droit des contrats</h3>
+                        <p>Les fondamentaux juridiques</p>
                         <div class="file-info">
-                            <i class="fas fa-clock"></i> 25 min • <i class="fas fa-eye"></i> 1.2K vues
+                            <i class="fas fa-clock"></i> 25 min
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="resource-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_2" allowfullscreen></iframe>
                     </div>
                     <div class="resource-content">
-                        <h3>Calcul de structures</h3>
-                        <p>Méthodes fondamentales</p>
+                        <h3>Génie civil</h3>
+                        <p>Techniques de construction</p>
                         <div class="file-info">
-                            <i class="fas fa-clock"></i> 18 min • <i class="fas fa-eye"></i> 890 vues
+                            <i class="fas fa-clock"></i> 18 min
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EBOOKS -->
+        <!-- Section Ebooks -->
         <section id="ebooks">
-            <h2><i class="fas fa-book-open"></i> Ebooks Premium</h2>
+            <h2><i class="fas fa-book"></i> Nos Ebooks</h2>
             <div class="resources-grid">
                 <div class="resource-card">
                     <img src="images/ebook-droit.jpg" alt="Ebook Droit">
                     <div class="resource-content">
-                        <h3>Guide juridique BTP</h3>
-                        <p>Maîtrisez les aspects légaux de la construction</p>
+                        <h3>Guide juridique</h3>
+                        <p>Maîtrisez les aspects légaux</p>
                         <div class="file-info">
-                            <i class="fas fa-file-pdf"></i> PDF • 120 pages • 15Mo
+                            <i class="fas fa-file-pdf"></i> PDF • 120 pages
                         </div>
                         <a href="https://paypal.com/achat-ebook-droit" class="cta-button">
                             Acheter (14.99€)
                         </a>
                     </div>
                 </div>
-
+                
                 <div class="resource-card">
                     <img src="images/ebook-genie-civil.jpg" alt="Ebook Génie Civil">
                     <div class="resource-content">
-                        <h3>Manuel de construction</h3>
-                        <p>Techniques modernes pas-à-pas</p>
+                        <h3>Manuel construction</h3>
+                        <p>Techniques modernes</p>
                         <div class="file-info">
-                            <i class="fas fa-file-pdf"></i> PDF • 90 pages • 12Mo
+                            <i class="fas fa-file-pdf"></i> PDF • 90 pages
                         </div>
                         <a href="https://paypal.com/achat-ebook-genie-civil" class="cta-button">
                             Acheter (12.99€)
@@ -231,34 +219,34 @@
             </div>
         </section>
 
-        <!-- PDF GRATUITS -->
+        <!-- Section PDF -->
         <section id="pdf">
-            <h2><i class="fas fa-file-download"></i> Ressources Gratuites</h2>
+            <h2><i class="fas fa-file-pdf"></i> Ressources PDF</h2>
             <div class="resources-grid">
                 <div class="resource-card">
-                    <img src="images/pdf-thumbnail1.jpg" alt="Lexique juridique">
+                    <img src="images/pdf-thumbnail1.jpg" alt="PDF Droit">
                     <div class="resource-content">
                         <h3>Lexique juridique</h3>
-                        <p>150 termes expliqués avec exemples</p>
+                        <p>150 termes expliqués</p>
                         <div class="file-info">
-                            <i class="fas fa-file-pdf"></i> PDF • 25 pages • 2.5Mo
+                            <i class="fas fa-file-pdf"></i> PDF • 25 pages
                         </div>
-                        <a href="pdf/lexique-juridique.pdf" class="resource-link" download>
-                            <i class="fas fa-download"></i> Télécharger
+                        <a href="pdf/lexique-juridique.pdf" download class="cta-button">
+                            Télécharger
                         </a>
                     </div>
                 </div>
-
+                
                 <div class="resource-card">
-                    <img src="images/pdf-thumbnail2.jpg" alt="Exercices béton">
+                    <img src="images/pdf-thumbnail2.jpg" alt="PDF Génie Civil">
                     <div class="resource-content">
-                        <h3>Exercices béton armé</h3>
-                        <p>Avec corrigés détaillés</p>
+                        <h3>Exercices béton</h3>
+                        <p>Corrigés détaillés</p>
                         <div class="file-info">
-                            <i class="fas fa-file-pdf"></i> PDF • 30 pages • 3.2Mo
+                            <i class="fas fa-file-pdf"></i> PDF • 30 pages
                         </div>
-                        <a href="pdf/exercices-beton.pdf" class="resource-link" download>
-                            <i class="fas fa-download"></i> Télécharger
+                        <a href="pdf/exercices-beton.pdf" download class="cta-button">
+                            Télécharger
                         </a>
                     </div>
                 </div>
