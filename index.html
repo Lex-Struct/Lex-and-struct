@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lex&Struct - Formations Droit & Génie Civil</title>
+    <title>Lex&Struct - Expertise Droit & Génie Civil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a237e; /* Bleu foncé */
-            --secondary: #ff6d00; /* Orange */
+            --primary: #1a237e;
+            --secondary: #ff6d00;
             --light: #f5f5f7;
             --dark: #121212;
         }
@@ -16,14 +17,18 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
         }
         body {
-            background-color: var(--light);
+            font-family: 'Open Sans', sans-serif;
             color: var(--dark);
             line-height: 1.6;
+            background-color: var(--light);
         }
-        /* Header */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+        }
+        /* HEADER */
         header {
             background-color: var(--primary);
             padding: 1rem 2rem;
@@ -41,8 +46,33 @@
             height: 70px;
             width: auto;
         }
-        /* Sections ressources */
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: white;
+        }
+        .logo-text p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+        /* SECTIONS */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
         .resource-card {
+            background: white;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -51,12 +81,21 @@
         .resource-card:hover {
             transform: translateY(-5px);
         }
-        /* Vidéos responsives */
+        .resource-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .resource-content {
+            padding: 1.5rem;
+        }
+        /* VIDÉOS */
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            background: #000;
         }
         .video-container iframe {
             position: absolute;
@@ -64,93 +103,127 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
         }
-        /* Style pour infos fichiers */
+        /* BOUTONS */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        /* INFOS FICHIERS */
         .file-info {
             color: #666;
-            font-size: 0.8rem;
-            margin-top: 5px;
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        /* Responsive */
+        /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        /* MOBILE */
         @media (max-width: 768px) {
             .logo img { height: 60px; }
+            section { padding: 3rem 1rem; }
+            section h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo-lexstruct.png" alt="Lex&Struct">
-                <div class="logo-text">
-                    <h1>Lex&Struct</h1>
-                    <p>Solidité des structures, force du droit</p>
-                </div>
+        <div class="logo">
+            <img src="images/logo-lexstruct.png" alt="Lex&Struct">
+            <div class="logo-text">
+                <h1>Lex&Struct</h1>
+                <p>Solidité des structures, force du droit</p>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <!-- SECTION VIDÉOS YOUTUBE -->
+        <!-- VIDÉOS YOUTUBE -->
         <section id="videos">
             <h2><i class="fab fa-youtube"></i> Nos Vidéos</h2>
             <div class="resources-grid">
-                <!-- Vidéo 1 -->
                 <div class="resource-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_1" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_1" allowfullscreen></iframe>
                     </div>
                     <div class="resource-content">
-                        <h3>Droit des contrats</h3>
-                        <p>Les fondamentaux juridiques expliqués simplement</p>
+                        <h3>Droit des contrats BTP</h3>
+                        <p>Les clauses essentielles à connaître</p>
+                        <div class="file-info">
+                            <i class="fas fa-clock"></i> 25 min • <i class="fas fa-eye"></i> 1.2K vues
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Vidéo 2 -->
+
                 <div class="resource-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_2" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_2" allowfullscreen></iframe>
                     </div>
                     <div class="resource-content">
                         <h3>Calcul de structures</h3>
-                        <p>Méthodes pour débutants en génie civil</p>
+                        <p>Méthodes fondamentales</p>
+                        <div class="file-info">
+                            <i class="fas fa-clock"></i> 18 min • <i class="fas fa-eye"></i> 890 vues
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION EBOOKS -->
+        <!-- EBOOKS -->
         <section id="ebooks">
-            <h2><i class="fas fa-book"></i> Nos Ebooks</h2>
+            <h2><i class="fas fa-book-open"></i> Ebooks Premium</h2>
             <div class="resources-grid">
-                <!-- Ebook 1 -->
                 <div class="resource-card">
                     <img src="images/ebook-droit.jpg" alt="Ebook Droit">
                     <div class="resource-content">
                         <h3>Guide juridique BTP</h3>
-                        <p>Les clés du droit dans la construction</p>
+                        <p>Maîtrisez les aspects légaux de la construction</p>
                         <div class="file-info">
                             <i class="fas fa-file-pdf"></i> PDF • 120 pages • 15Mo
                         </div>
-                        <a href="https://paypal.com/achat-ebook-lexstruct1" class="cta-button">
+                        <a href="https://paypal.com/achat-ebook-droit" class="cta-button">
                             Acheter (14.99€)
                         </a>
                     </div>
                 </div>
-                
-                <!-- Ebook 2 -->
+
                 <div class="resource-card">
                     <img src="images/ebook-genie-civil.jpg" alt="Ebook Génie Civil">
                     <div class="resource-content">
                         <h3>Manuel de construction</h3>
-                        <p>Techniques modernes expliquées</p>
+                        <p>Techniques modernes pas-à-pas</p>
                         <div class="file-info">
                             <i class="fas fa-file-pdf"></i> PDF • 90 pages • 12Mo
                         </div>
-                        <a href="https://paypal.com/achat-ebook-lexstruct2" class="cta-button">
+                        <a href="https://paypal.com/achat-ebook-genie-civil" class="cta-button">
                             Acheter (12.99€)
                         </a>
                     </div>
@@ -158,16 +231,15 @@
             </div>
         </section>
 
-        <!-- SECTION PDF GRATUITS -->
+        <!-- PDF GRATUITS -->
         <section id="pdf">
             <h2><i class="fas fa-file-download"></i> Ressources Gratuites</h2>
             <div class="resources-grid">
-                <!-- PDF 1 -->
                 <div class="resource-card">
-                    <img src="images/pdf-thumbnail1.jpg" alt="Cours PDF">
+                    <img src="images/pdf-thumbnail1.jpg" alt="Lexique juridique">
                     <div class="resource-content">
                         <h3>Lexique juridique</h3>
-                        <p>150 termes expliqués</p>
+                        <p>150 termes expliqués avec exemples</p>
                         <div class="file-info">
                             <i class="fas fa-file-pdf"></i> PDF • 25 pages • 2.5Mo
                         </div>
@@ -176,10 +248,9 @@
                         </a>
                     </div>
                 </div>
-                
-                <!-- PDF 2 -->
+
                 <div class="resource-card">
-                    <img src="images/pdf-thumbnail2.jpg" alt="Cours PDF">
+                    <img src="images/pdf-thumbnail2.jpg" alt="Exercices béton">
                     <div class="resource-content">
                         <h3>Exercices béton armé</h3>
                         <p>Avec corrigés détaillés</p>
@@ -196,11 +267,7 @@
     </main>
 
     <footer>
-        <!-- ... (votre footer existant) ... -->
+        <p>&copy; 2023 Lex&Struct. Tous droits réservés.</p>
     </footer>
-
-    <script>
-        // Script pour menu mobile si besoin
-    </script>
 </body>
 </html>
