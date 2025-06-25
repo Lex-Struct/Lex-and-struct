@@ -4,434 +4,384 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lex&Struct - Solidité des structures, force du droit</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #0a2463; /* Bleu foncé */
+            --secondary-color: #3e92cc;
+            --accent-color: #d8315b;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.8)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Style pour la boutique */
+        .product-card .price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Style responsive */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- En-tête avec menu -->
-    <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <div class="logo">
-                <h1>Lex<span>&</span>Struct</h1>
-                <p>Solidité des structures, force du droit</p>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#boutique">Boutique</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#connexion" class="btn-login">Espace membres</a></li>
+            <a class="navbar-brand" href="#">
+                <span style="color: #fff;">Lex</span><span style="color: #3e92cc;">&</span><span style="color: #fff;">Struct</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formations">Formations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#boutique">Boutique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="#espace-membre">Espace Membre</a>
+                    </li>
                 </ul>
-            </nav>
-            <div class="menu-mobile">
-                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Bannière d'accueil -->
-    <section id="accueil" class="banner">
+    <section class="hero-section text-center">
         <div class="container">
-            <h2>Formez-vous en droit et en génie civil</h2>
-            <p>Avec des ressources claires et accessibles</p>
-            <a href="#formations" class="btn">Découvrir nos formations</a>
+            <h1 class="display-4 fw-bold mb-4">Lex&Struct</h1>
+            <p class="lead mb-4">Solidité des structures, force du droit</p>
+            <p class="mb-5">Formez-vous en droit et en génie civil avec des ressources claires et accessibles</p>
+            <a href="#formations" class="btn btn-primary btn-lg me-2">Nos Formations</a>
+            <a href="#boutique" class="btn btn-outline-light btn-lg">Notre Boutique</a>
         </div>
     </section>
 
-    <!-- Galerie de formations -->
-    <section id="formations" class="formations">
+    <!-- Section Formations -->
+    <section id="formations" class="py-5">
         <div class="container">
-            <h2>Nos Formations</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200?text=Droit" alt="Formation Droit">
-                    <h3>Droit</h3>
-                    <p>Cours en PDF, vidéos et quiz.</p>
-                    <a href="#" class="btn">Accéder</a>
+            <h2 class="section-title text-center mb-5">Nos Formations</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Droit des Contrats</h5>
+                            <div class="ratio ratio-16x9 mb-3">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_DROIT" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">Maîtrisez les fondamentaux du droit des contrats avec cette formation complète.</p>
+                            <a href="#" class="btn btn-primary">Accéder à la formation</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200?text=Génie+Civil" alt="Formation Génie Civil">
-                    <h3>Génie Civil</h3>
-                    <p>Ressources techniques et études de cas.</p>
-                    <a href="#" class="btn">Accéder</a>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Génie Civil - Fondations</h5>
+                            <div class="ratio ratio-16x9 mb-3">
+                                <iframe src="https://www.youtube.com/embed/VIDEO_ID_GENIE" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">Tout savoir sur les différents types de fondations en génie civil.</p>
+                            <a href="#" class="btn btn-primary">Accéder à la formation</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x200?text=Ebooks" alt="Ebooks">
-                    <h3>Ebooks</h3>
-                    <p>Téléchargez nos guides pratiques.</p>
-                    <a href="#boutique" class="btn">Acheter</a>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">Voir toutes les formations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Boutique -->
+    <section id="boutique" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Notre Boutique</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200?text=Ebook+Droit" class="card-img-top" alt="Ebook Droit">
+                        <div class="card-body">
+                            <h5 class="card-title">Guide complet du droit des affaires</h5>
+                            <p class="card-text">Toutes les notions essentielles pour maîtriser le droit des affaires.</p>
+                            <div class="price">19,99 €</div>
+                            <a href="#" class="btn btn-primary mt-2">Acheter maintenant</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200?text=Ebook+Génie+Civil" class="card-img-top" alt="Ebook Génie Civil">
+                        <div class="card-body">
+                            <h5 class="card-title">Manuel de calcul des structures</h5>
+                            <p class="card-text">Les méthodes de calcul indispensables pour tout ingénieur.</p>
+                            <div class="price">24,99 €</div>
+                            <a href="#" class="btn btn-primary mt-2">Acheter maintenant</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x200?text=Pack+Complet" class="card-img-top" alt="Pack Complet">
+                        <div class="card-body">
+                            <h5 class="card-title">Pack Droit + Génie Civil</h5>
+                            <p class="card-text">Les deux meilleures ventes à prix spécial.</p>
+                            <div class="price">39,99 € <small class="text-muted text-decoration-line-through">44,98 €</small></div>
+                            <a href="#" class="btn btn-primary mt-2">Acheter maintenant</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Boutique Ebooks -->
-    <section id="boutique" class="boutique">
+    <!-- Section Blog -->
+    <section id="blog" class="py-5">
         <div class="container">
-            <h2>Boutique</h2>
-            <div class="grid">
-                <div class="product">
-                    <img src="https://via.placeholder.com/200x250?text=Ebook+Droit" alt="Ebook Droit">
-                    <h3>Guide juridique</h3>
-                    <p class="price">19,99 €</p>
-                    <a href="#" class="btn">Acheter</a>
+            <h2 class="section-title text-center mb-5">Notre Blog</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Article+Droit" class="card-img-top" alt="Article Droit">
+                        <div class="card-body">
+                            <h5 class="card-title">Les nouveautés législatives 2023</h5>
+                            <p class="card-text">Un tour d'horizon des nouvelles lois qui impactent votre activité.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire l'article</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/200x250?text=Ebook+Génie+Civil" alt="Ebook Génie Civil">
-                    <h3>Manuel de construction</h3>
-                    <p class="price">24,99 €</p>
-                    <a href="#" class="btn">Acheter</a>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Article+Génie" class="card-img-top" alt="Article Génie">
+                        <div class="card-body">
+                            <h5 class="card-title">Les matériaux de construction innovants</h5>
+                            <p class="card-text">Découvrez les dernières avancées en matière de matériaux.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire l'article</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200?text=Article+Conseils" class="card-img-top" alt="Article Conseils">
+                        <div class="card-body">
+                            <h5 class="card-title">5 conseils pour réussir vos études de droit</h5>
+                            <p class="card-text">Les méthodes qui font la différence.</p>
+                            <a href="#" class="btn btn-outline-primary">Lire l'article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog -->
-    <section id="blog" class="blog">
+    <!-- Section Espace Membre -->
+    <section id="espace-membre" class="py-5 bg-light">
         <div class="container">
-            <h2>Blog</h2>
-            <div class="grid">
-                <article class="post">
-                    <img src="https://via.placeholder.com/400x250?text=Article+Droit" alt="Article Droit">
-                    <h3>Les bases du droit immobilier</h3>
-                    <p>Un guide pour comprendre les contrats.</p>
-                    <a href="#" class="btn">Lire</a>
-                </article>
-                <article class="post">
-                    <img src="https://via.placeholder.com/400x250?text=Article+Génie+Civil" alt="Article Génie Civil">
-                    <h3>Calcul de structures</h3>
-                    <p>Méthodes et outils essentiels.</p>
-                    <a href="#" class="btn">Lire</a>
-                </article>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">Espace Membre</h2>
+                    <p>Accédez à tous nos contenus premium en devenant membre :</p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Tous les cours en PDF</li>
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Vidéos exclusives</li>
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Support personnalisé</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Devenir Membre</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/600x400?text=Espace+Membre" alt="Espace Membre" class="img-fluid rounded">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Formulaire de contact -->
-    <section id="contact" class="contact">
+    <!-- Section Contact -->
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2>Contactez-nous</h2>
-            <form>
-                <input type="text" placeholder="Nom" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Votre message" required></textarea>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
+            <h2 class="section-title text-center mb-5">Contactez-nous</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control" id="nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sujet" class="form-label">Sujet</label>
+                            <select class="form-select" id="sujet">
+                                <option>Question sur une formation</option>
+                                <option>Problème technique</option>
+                                <option>Demande de partenariat</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h4">Nos coordonnées</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-envelope me-2"></i> contact@lexetstruct.com</li>
+                        <li class="mb-3"><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> 123 Rue du Savoir, 75000 Paris</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h3 class="h4">Suivez-nous</h3>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="#" class="text-decoration-none"><i class="fab fa-youtube fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Pied de page -->
-    <footer class="footer">
+    <footer class="py-4">
         <div class="container">
-            <div class="footer-logo">
-                <h3>Lex<span>&</span>Struct</h3>
-                <p>Solidité des structures, force du droit</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Lex&Struct</h5>
+                    <p>Solidité des structures, force du droit</p>
+                    <p>Formez-vous en droit et en génie civil avec des ressources claires et accessibles</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Accueil</a></li>
+                        <li><a href="#formations" class="text-white">Formations</a></li>
+                        <li><a href="#boutique" class="text-white">Boutique</a></li>
+                        <li><a href="#blog" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Légal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Mentions légales</a></li>
+                        <li><a href="#" class="text-white">CGV</a></li>
+                        <li><a href="#" class="text-white">Confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos dernières formations</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Votre email">
+                        <button type="submit" class="btn btn-light">OK</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Liens rapides</h4>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#boutique">Boutique</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Lex&Struct. Tous droits réservés.</p>
             </div>
-            <div class="footer-social">
-                <h4>Réseaux sociaux</h4>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Lex&Struct. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personnalisé -->
+    <script>
+        // Animation pour le défilement fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Fonctionnalité pour la boutique (exemple)
+        document.querySelectorAll('.product-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('.card-title').textContent;
+                alert(`Vous avez ajouté "${productName}" à votre panier !`);
+            });
+        });
+    </script>
 </body>
 </html>
-/* Variables */
-:root {
-    --primary-color: #1a237e; /* Bleu foncé */
-    --secondary-color: #ffab00; /* Jaune pour accents */
-    --text-color: #333;
-    --light-gray: #f5f5f5;
-    --white: #fff;
-    --font-title: 'Montserrat', sans-serif;
-    --font-text: 'Open Sans', sans-serif;
-}
-
-/* Reset et base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-text);
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-.btn {
-    display: inline-block;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #0d1561;
-}
-
-/* En-tête */
-.header {
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.logo h1 {
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-}
-
-.logo h1 span {
-    color: var(--primary-color);
-}
-
-.logo p {
-    font-size: 0.9rem;
-    color: #777;
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-}
-
-.navbar ul li a {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-}
-
-.navbar ul li a:hover {
-    color: var(--primary-color);
-}
-
-.btn-login {
-    background: var(--secondary-color);
-    color: #000 !important;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.menu-mobile {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Bannière */
-.banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x600?text=Formations+Droit+et+Génie+Civil');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    text-align: center;
-    padding: 150px 0 100px;
-}
-
-.banner h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.banner p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Formations */
-.formations, .boutique, .blog, .contact {
-    padding: 80px 0;
-}
-
-.formations h2, .boutique h2, .blog h2, .contact h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: var(--font-title);
-    color: var(--primary-color);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card, .product, .post {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover, .product:hover, .post:hover {
-    transform: translateY(-10px);
-}
-
-.card img, .product img, .post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card h3, .product h3, .post h3 {
-    padding: 15px;
-    font-family: var(--font-title);
-}
-
-.card p, .product p, .post p {
-    padding: 0 15px 15px;
-}
-
-.price {
-    font-weight: bold;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-/* Contact */
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 20px;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.contact textarea {
-    height: 150px;
-}
-
-/* Pied de page */
-.footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 50px 0 0;
-}
-
-.footer .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.footer-logo h3 {
-    font-family: var(--font-title);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.footer-logo h3 span {
-    color: var(--secondary-color);
-}
-
-.footer-links h4, .footer-social h4 {
-    font-family: var(--font-title);
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links ul li a {
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a:hover {
-    color: var(--secondary-color);
-}
-
-.footer-social a {
-    color: var(--white);
-    font-size: 1.5rem;
-    margin-right: 15px;
-}
-
-.copyright {
-    text-align: center;
-    padding: 20px 0;
-    background: #0d1561;
-    margin-top: 30px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .menu-mobile {
-        display: block;
-    }
-
-    .banner {
-        padding: 120px 0 80px;
-    }
-
-    .banner h2 {
-        font-size: 2rem;
-    }
-}
-// Menu mobile
-document.querySelector('.menu-mobile').addEventListener('click', function() {
-    const navbar = document.querySelector('.navbar ul');
-    navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
-});
-
-// Fermer le menu en cliquant ailleurs
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.menu-mobile') && !e.target.closest('.navbar ul')) {
-        document.querySelector('.navbar ul').style.display = 'none';
-    }
-});
